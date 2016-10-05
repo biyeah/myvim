@@ -1,3 +1,13 @@
+"let $PYTHONHOME=$HOME."/.pyenv/versions/2.7.11"
+"set pythondll=$HOME/.pyenv/versions/2.7.11/lib/libpython2.7.dylib
+"py import sys
+" let g:jedi#force_py_version = 3
+" let g:ycm_server_python_interpreter = '/usr/local/bin/python3'
+" let $PYTHONHOME=$HOME."/.pyenv/versions/3.5.2"
+" set pythonthreedll=$HOME/.pyenv/versions/3.5.2/lib/libpython3.5m.dylib
+let $PYTHONHOME="/usr/local/Cellar/python3/3.5.2_2/Frameworks/Python.framework/Versions/3.5"
+" set pythonthreedll=/usr/local/Cellar/python3/3.5.2_2/Frameworks/Python.framework/Versions/3.5/lib/libpython3.5m.dylib
+" py3 import sys
 set nocompatible              " required
 filetype off                  " required
 
@@ -14,13 +24,15 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'gmarik/Vundle.vim'
 " Add all your plugins here (note older versions of Vundle used Bundle instead of Plugin)
 Plugin 'SirVer/ultisnips'
+" Plugin 'rking/ag.vim'
 
 " Snippets are separated from the engine. Add this if you want them:
 Plugin 'honza/vim-snippets'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Townk/vim-autoclose'
-Plugin 'kien/ctrlp.vim'
+" Plugin 'kien/ctrlp.vim'
 Plugin 'davidhalter/jedi-vim'
+" Plugin 'Valloric/YouCompleteMe'
 
 
 " All of your Plugins must be added before the following line
@@ -44,8 +56,9 @@ set guifont=Monaco:h12
 " let g:pymode_python = 'python3'
 " let g:pymode_motion = 0
 " let g:pymode_lint = 0
-map <F9> :w<CR>:!python3 %<CR>
-map <F12> :NERDTreeToggle<CR>
+let mapleader = ","
+map <Leader>b :w<CR>:!python3 %<CR>
+map <Leader>t :NERDTreeToggle<CR>
 ""ino " ""<left>
 ""ino ' ''<left>
 ""ino ( ()<left>
